@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4celestials: Capstone Project</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        header img {
+            height: 50px;
+            margin-right: 10px;
+        }
+        .container {
+            width: 80%;
+            margin: 2rem auto;
+        }
+        .search-bar {
+            margin-bottom: 1rem;
+            display: flex;
+            justify-content: center;
+        }
+        .search-bar input {
+            width: 50%;
+            padding: 0.5rem;
+            font-size: 1rem;
+        }
+        .news-card {
+            background-color: #fff;
+            margin: 1rem 0;
+            padding: 1rem;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .news-card h2 {
+            margin: 0 0 0.5rem 0;
+        }
+        .news-card p {
+            margin: 0.5rem 0;
+        }
+        .summary {
+            color: #555;
+            font-style: italic;
+        }
+        .footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="logo.jpeg" alt="4celestials Logo">
+        <h1>4celestials: One stop for all Cricket news</h1>
+    </header>
+    <div class="container">
+        <div class="search-bar">
+            <input type="text" id="search-input" placeholder="Search news...">
+        </div>
+        <div id="news-container">
+            <!-- News cards will be dynamically added here -->
+            {% if articles %}
+                {% for article in articles %}
+                    <div class="news-card">
+                        <h2>{{ article.title }}</h2>
+                        <p><strong>Summary:</strong> <span class="summary">{{ article.summary }}</span></p>
+                        <p>{{ article.content }}</p>
+                        <p><strong>Source:</strong> {{ article.source }}</p>
+                        <p><strong>Date:</strong> {{ article.date }}</p>
+                    </div>
+                {% endfor %}
+            {% else %}
+                <p>No articles found.</p>
+            {% endif %}
+        </div>
+    </div>
+
+    <div class="footer">
+        <p class="keywords-bar">Copyright 4celestials 2024</p>
+    </div>
+</body>
+</html>

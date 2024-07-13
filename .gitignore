@@ -1,0 +1,8 @@
+.c9
+.git
+.github
+.terraform
+.terraform.lock.hcl
+*.key
+*.pub
+*.tfstate
