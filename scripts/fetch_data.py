@@ -12,5 +12,6 @@ def fetch_news_data():
         else:
             print("Error in API response status")
     else:
-        print("Error fetching data from newsdata.io")
+        print("Error fetching data from the source")
     return []
+
